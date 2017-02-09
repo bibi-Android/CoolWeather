@@ -4,8 +4,8 @@
     <version value = "1"/>
 
     <list>
-        <mapping class = "com.me.geek.coolweather.android.db.Province"/>
-        <mapping class = "com.me.geek.coolweather.android.db.City"/>
-        <mapping class = "com.me.geek.coolweather.android.db.County"/>
+        <mapping class = "me.geek.coolweather.db.Province"/>
+        <mapping class = "me.geek.coolweather.db.City"/>
+        <mapping class = "me.geek.coolweather.db.County"/>
     </list>
 </litepal>
