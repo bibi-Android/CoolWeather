@@ -1,4 +1,4 @@
-package me.geek.coolweather;
+package me.geek.coolweather.Activity;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -14,7 +14,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -26,6 +25,7 @@ import com.bumptech.glide.Glide;
 
 import java.io.IOException;
 
+import me.geek.coolweather.R;
 import me.geek.coolweather.gson.Forecast;
 import me.geek.coolweather.gson.Weather;
 import me.geek.coolweather.service.AutoUpdateService;
@@ -213,6 +213,7 @@ public class WeatherActivity extends AppCompatActivity{
                             SharedPreferences.Editor editor = PreferenceManager.getDefaultSharedPreferences(WeatherActivity.this).edit();
                             editor.putString("weather", responseText);
                             editor.apply();
+                            mWeatherId = weatherId;
                             showWeatherInfo(weather);
                         }else {
                             Toast.makeText(WeatherActivity.this, "获取天气失败", Toast.LENGTH_SHORT).show();

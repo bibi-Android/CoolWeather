@@ -1,4 +1,4 @@
-package me.geek.coolweather;
+package me.geek.coolweather.Activity;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -6,6 +6,10 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+
+import java.io.FileOutputStream;
+
+import me.geek.coolweather.R;
 
 /**
  * @Author Geek-Lizc(394925542@qq.com)

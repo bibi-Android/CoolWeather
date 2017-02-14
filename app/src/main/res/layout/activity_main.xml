@@ -5,7 +5,7 @@
 
     <fragment
         android:id="@+id/choose_area_fragment"
-        android:name="me.geek.coolweather.ChooseAreaFragment"
+        android:name="me.geek.coolweather.Activity.ChooseAreaFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 </LinearLayout>

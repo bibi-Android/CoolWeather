@@ -1,4 +1,4 @@
-package me.geek.coolweather;
+package me.geek.coolweather.Activity;
 
 import android.annotation.TargetApi;
 import android.app.Fragment;
@@ -25,6 +25,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import me.geek.coolweather.R;
 import me.geek.coolweather.db.City;
 import me.geek.coolweather.db.County;
 import me.geek.coolweather.db.Province;
@@ -107,6 +108,7 @@ public class ChooseAreaFragment extends Fragment {
         adapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_list_item_1, dataList);
         listView.setAdapter(adapter);
         return view;
+
     }
 
     /**
@@ -134,7 +136,7 @@ public class ChooseAreaFragment extends Fragment {
                         intent.putExtra("weather_id", weatherid);
                         startActivity(intent);
                         getActivity().finish();
-                    }else if(getActivity() instanceof WeatherActivity){//当作为侧滑碎片的时候
+                    }else if(getActivity() instanceof WeatherActivity){//当作为侧滑碎片的时候则刷新
                         WeatherActivity weatherActivity = (WeatherActivity)getActivity();
                         weatherActivity.drawerLayout.closeDrawers();
                         weatherActivity.swipeRefresh.setRefreshing(true);
@@ -221,6 +223,7 @@ public class ChooseAreaFragment extends Fragment {
             String address = "http://guolin.tech/api/china/" + provinceCode + "/" + cityCode;
             queryFromServer(address, "county");
         }
+
     }
 
     /**
@@ -250,6 +253,7 @@ public class ChooseAreaFragment extends Fragment {
                     result = Utility.handleCityResponse(resposeText, selectedProvince.getId());
                 }else if("county".equals(type)){
                     result = Utility.handleCountyResponse(resposeText, selectedCity.getId());
+                    Log.i("Weather", String.valueOf(selectedCity.getId()));
                 }
 
                 if(result){

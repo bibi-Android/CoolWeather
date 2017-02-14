@@ -97,6 +97,7 @@ public class Utility {
 
     /**
      * 解析服务器或本地获取到的天气Json信息
+     * http://guolin.tech/api/weather?cityid=CN101280103&key=f62a6124472e464d84731242a581b971
      */
 
     public static Weather handleWeatherResponse(String response){
